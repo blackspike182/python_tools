@@ -145,7 +145,6 @@ nested_transpose(m)
 
 # Define a function that takes a list and string, then returns all elements that start with the string, along with their indices in the list.
 
-# In[212]:
 
 def func(l,s):
     return [x for x in l if x.startswith(s)]
