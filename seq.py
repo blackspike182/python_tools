@@ -1,15 +1,5 @@
-
 # coding: utf-8
 
-# # Excercises for Day 4: Sequences
-# 
-# [4.1 Strings](#4.1)
-# 
-# [4.2 Lists](#4.2)
-# 
-# [4.3 Dictionaries](#4.3)
-# 
-# [4.4 The _collections_ module](#4.4)
 
 # ## 4.1 Strings
 # <a id='4.1'></a>
@@ -221,7 +211,7 @@ def process_data(fn):
 
 
 
-# In[284]:
+
 
 data = process_data("data/movies.tsv")
 
@@ -231,7 +221,7 @@ data
 # ### 4.3.4
 # Process the movies dataset (the original file or the dictionary built in __4.3.3__) and build a dictionary that indexes movies by the first letter of the title. Then create a small interface for querying (using the input function)
 
-# In[ ]:
+
 
 
 
@@ -239,7 +229,7 @@ data
 # ### 4.3.5
 # Build an incremental search of movie titles: users should be able to narrow the set of movies with every character they type. You may create deeply nested dictionaries beforehand or process the data on-the-fly.
 
-# In[ ]:
+
 
 
 
@@ -250,7 +240,7 @@ data
 # ### 4.4.1
 # Modify the word counter in __4.3.1__ so that it uses a defaultdict.
 
-# In[ ]:
+
 
 
 
@@ -258,7 +248,7 @@ data
 # ### 4.4.2
 # Modify the word counter in __4.4.1__ so that it uses a Counter.
 
-# In[ ]:
+
 
 
 
@@ -266,7 +256,7 @@ data
 # ### 4.4.3
 # Define a function that queries users for their last name, first name, year of birth, and hobby, and populates an OrderedDict whose keys are the last names and values are dictionaries with four keys each. If a second person with the same last name is encountered, both should now have keys of the form "lastname_firstname". If the same person is encountered multiple times, his/her data should be updated. Then test the solution of someone else and ask her to test yours.
 
-# In[ ]:
+
 
 
 
@@ -274,7 +264,7 @@ data
 # ### 4.4.4
 # Convert the database built in __4.4.3__ into a list of namedtuples.
 
-# In[ ]:
+
 
 
 
