@@ -1,7 +1,10 @@
+"""This is a comment for the module."""
 __author__ = "Gabor Racz"
 __version__ = "1.0"
 
+
 def text_to_sentances(text):
+    """ from text to stentances """
     sentances = []
     for punct in ".?":
         text = text.strip().replace(punct, "!")
@@ -18,18 +21,18 @@ def to_words(sentance):
     return stripped_words
 
 
-def process(f):
+def process(file_):
     out = []
-    text = open(f).read()
+    text = open(file_).read()
     for sentance in text_to_sentances(text):
         words = to_words(sentance)
         out.append(words)
     return out
 
 
-def joefy(l):
+def joefy(line):
     out = []
-    for i in l:
+    for i in line:
         for j in i:
             if i.index(j) != 0 and j.istitle():
                 out.append("Joe")
@@ -38,16 +41,15 @@ def joefy(l):
     return out
 
 
-def game(f):
-    for i in process(f):
+def game(file_):
+    for i in process(file_):
         for j in i:
             if i.index(j) == 4:
                 word = i[4]
                 print(word)
-                print( word[:(len(word)-1)/2] + "*" * len(word[len(word)/2:]))
+                print(word[:(len(word)-1)/2] + "*" * len(word[len(word)/2:]))
             else:
                 print(j)
-                
 
 def symmetric(matrix):
     for i in range(len(matrix)):
@@ -71,21 +73,20 @@ def nested_transpose(matrix):
     return [[matrix[i][j] for i in range(len(matrix))] for j in range(len(matrix[0]))]
 
 
-def func(l,s):
-    return [x for x in l if x.startswith(s)]
+def func(line, string):
+    return [x for x in line if x.startswith(string)]
 
 
-def process_data(fn):
+def process_data(filename):
     data = {}
-    f = open(fn)
-    for line in f:
+    file_ = open(filename)
+    for line in file_:
         title, year, genres = line.strip().split("\t")
         title = title.strip()
         year = int(year)
         genres = genres.split(",")
-        
         for genre in genres:
             if genre not in data:
                 data[genre] = []
-            data[genre].append((title, year))          
+            data[genre].append((title, year))
     return data
