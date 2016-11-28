@@ -104,9 +104,9 @@ game("data/sample_text.txt")
 
 # In[133]:
 
-m = [[1,2,3],
-     [2,5,6],
-     [3,6,9]]
+m = [[11,22,33],
+     [22,55,66],
+     [33,66,99]]
 
 def symmetric(matrix):
     for i in range(len(matrix)):
