@@ -17,7 +17,6 @@
 # ### 4.1.1
 # Define a function that splits a text into sentences (on ".", "!", "?", etc.)
 
-# In[6]:
 
 def text_to_sentances(text):
     sentances = []
@@ -30,7 +29,6 @@ def text_to_sentances(text):
 
 # Define a function that splits sentences into words, and strips punctuation marks (",", ";", etc.) from edges of words.
 
-# In[9]:
 
 def to_words(sentance):
     words = sentance.split()
@@ -42,7 +40,6 @@ def to_words(sentance):
 
 # Use the last two functions in one that takes a filename as its argument and returns the text in the file as a list of lists. Test it on the file "data/sample_text.txt"
 
-# In[10]:
 
 def process(f):
     out = []
@@ -53,15 +50,12 @@ def process(f):
     return out
 
 
-# In[11]:
 
 process("data/sample_text.txt")[0][:3]
 
 
 # ### 4.1.2
 # Use the functions defined in __4.1.1__ and define a function that goes through a text and replaces all proper names (capitalized words not at the beginning of a sentence) with "Joe". Print the first few sentences to test your solution.
-
-# In[95]:
 
 def joefy(l):
     out = []
@@ -80,7 +74,6 @@ def joefy(l):
 # ### 4.1.3
 # Load the sample text using your function from __4.1.1__ and create a game where the user is shown a half of a word in a small context (e.g. "_Many solu\*\*\*\*\* were suggested_") and has to guess the full word (don't worry about randomization, your solution can come up with the same questions every time).
 
-# In[127]:
 
 def game(f):
     for i in process(f):
@@ -102,7 +95,6 @@ game("data/sample_text.txt")
 # ### 4.2.1
 # Define a function that takes as its input a list of $n$ lists of $n$ numbers (a square matrix) and decides if it is symmetric (i.e. $A[i,j] == A[j,i]$ for all $i, j$).
 
-# In[133]:
 
 m = [[11,22,33],
      [22,55,66],
@@ -121,7 +113,6 @@ symmetric(m)
 # ### 4.2.2
 # Define a function that takes a list containing lists of equal length (i.e. a table of size $n\times k$) and "transposes" it, creating a table of size $k\times n$.
 
-# In[200]:
 
 m = [[1,2,3],
      [4,5,6]]
@@ -143,7 +134,6 @@ transpose(m)
 # ### 4.2.3
 # Redo 4.2.2 using nested list comprehension!
 
-# In[208]:
 
 def nested_transpose(matrix):
     return [[matrix[i][j] for i in range(len(matrix))] for j in range(len(matrix[0]))]
@@ -170,7 +160,6 @@ func(l,"ab")
 # ### 4.3.1
 # Use a dictionary to count words in our sample text (use your text processing functions!). Then print the most common words, along with their frequencies!
 
-# In[259]:
 
 d = {}
 p = process("data/sample_text.txt")[0]
@@ -187,7 +176,6 @@ sorted(d.items(), key=lambda x:x[1], reverse=True)
 
 # Define function that performs the factorial operation ($n!$) but caches all results so that each call requires the least possible number of multiplications.
 
-# In[261]:
 
 get_ipython().run_cell_magic(u'time', u'', u'def fact(n):\n    d = {}\n    for i in range(n):\n        if i == 0:\n            d[i] = 1\n        else:\n            d[i] = d[i-1]*i\n    return d[n-1]\n    \nfact(500)')
 
@@ -195,7 +183,6 @@ get_ipython().run_cell_magic(u'time', u'', u'def fact(n):\n    d = {}\n    for i
 # ### 4.3.3
 # Read the dataset in "data/movies.tsv" and store it in a dictionary whose keys are genres and the values are list of tuples of title and year
 
-# In[268]:
 
 f = open("data/movies.tsv")
 lines = []
@@ -217,7 +204,6 @@ for title, year, genre in lines[:-1]:
 f.close()
 
 
-# In[281]:
 
 def process_data(fn):
     data = {}
